@@ -32,7 +32,7 @@ with open("tmp.log", "w") as out_file:
                     out_file.write(lastline)
                     lastline = line
 
-sorted_log = check_output(["/usr/bin/sort", "--key=1,2", "tmp.log"])
+sorted_log = check_output(["/usr/bin/sort", "-T", "./", "-S", "1G", "--key=1,2", "tmp.log"])
 
 os.remove("tmp.log")
 
